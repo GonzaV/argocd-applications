@@ -20,6 +20,8 @@ spec:
         image: busybox
         command: ["/bin/sh", "-c"]
         args: ["while true; do echo Hello Dev; sleep 5; done"]
+        ports:
+          - containerPort: 8080
         resources:
           requests:
             memory: "64Mi"
