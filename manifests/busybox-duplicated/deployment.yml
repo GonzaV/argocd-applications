@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-duplicated
+  labels:
+    tier: "2"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-duplicated
+  template:
+    metadata:
+      labels:
+        app: busybox-duplicated
+        tier: "3"
+    spec:
+      containers:
+      - name: busybox-duplicated
+        image: busybox
+        command: ["/bin/sh", "-c"]
+        args: ["while true; do echo Hello Dev; sleep 5; done"]
+        ports:
+          - containerPort: 8080
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
