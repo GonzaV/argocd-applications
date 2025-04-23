@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 metadata:
   name: busybox-duplicated
+  annotations:
+    argocd.argoproj.io/sync-options: ServerSideApply=true
   labels:
     tier: "2"
 spec:
