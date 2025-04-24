@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+breakingfield: badfield
 metadata:
   name: busybox-duplicated
   annotations:
