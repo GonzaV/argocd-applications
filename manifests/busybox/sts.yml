@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  labels:
+    tier: "3"
   name: demo-sts
 spec:
   selector:
