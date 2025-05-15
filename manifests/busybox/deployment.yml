@@ -30,3 +30,10 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "200m"
+        volumeMounts:
+          - mountPath: /etc/missing-secret
+            name: missing-secret
+      volumes:
+        - name: missing-secret
+          secret:
+            secretName: does-not-exist
