@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: busybox-dev-echo
   labels:
-    tier: "2"
+    tier: "3"
 spec:
   replicas: 1
   selector:
