@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: demo-sts
+spec:
+  selector:
+    matchLabels:
+      app: demo-sts
+  serviceName: "demo-sts"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-sts
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh", "-c", "sleep 3600"]
+        volumeMounts:
+        - name: missing-secret
+          mountPath: /etc/missing-secret
+      volumes:
+      - name: missing-secret
+        secret:
+          secretName: does-not-exist
