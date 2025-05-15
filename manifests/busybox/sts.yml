@@ -4,7 +4,7 @@ metadata:
   name: demo-sts
   labels:
     tier: "3"
-    poke: "RacingClub"
+    poke: "Racing"
   name: demo-sts
 spec:
   selector:
