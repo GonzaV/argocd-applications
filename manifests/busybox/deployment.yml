@@ -22,6 +22,12 @@ spec:
         args: ["while true; do echo Hello Dev; sleep 5; done"]
         ports:
           - containerPort: 8080
+        env:
+          - name: BROKEN_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: nonexistent-config
+                key: does-not-exist
         resources:
           requests:
             memory: "64Mi"
