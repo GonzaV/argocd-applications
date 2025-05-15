@@ -1,6 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
-breakingexistingdeployment: 3
 metadata:
   name: busybox-dev-echo
   labels:
