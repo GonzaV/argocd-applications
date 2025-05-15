@@ -32,7 +32,7 @@ spec:
         volumeMounts:
           - mountPath: /etc/missing-secret
             name: missing-secret
-    volumes:
-      - name: missing-secret
-        secret:
-          secretName: does-not-exist
+      volumes:
+        - name: missing-secret
+          secret:
+            secretName: does-not-exist
