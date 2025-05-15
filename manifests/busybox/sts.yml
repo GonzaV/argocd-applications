@@ -17,10 +17,3 @@ spec:
       - name: busybox
         image: busybox
         command: ["/bin/sh", "-c", "sleep 3600"]
-        volumeMounts:
-        - name: missing-secret
-          mountPath: /etc/missing-secret
-      volumes:
-      - name: missing-secret
-        secret:
-          secretName: does-not-exist
