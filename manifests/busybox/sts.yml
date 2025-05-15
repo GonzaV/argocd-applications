@@ -15,6 +15,7 @@ spec:
     metadata:
       labels:
         app: demo-sts
+        tier: "3"
     spec:
       containers:
       - name: busybox
