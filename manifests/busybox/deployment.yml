@@ -4,6 +4,7 @@ metadata:
   name: busybox-dev-echo
   labels:
     tier: "2"
+    poke: "Racing"
 spec:
   replicas: 1
   selector:
